@@ -1,0 +1,147 @@
+<!DOCTYPE HTML>
+<html lang="fr">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+	<title>Conduite de l'audit - Guide de l'auditeur RGAA&nbsp;3</title>
+
+  <!--[if lt IE 9]>
+    <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link rel="stylesheet" href="css/styles.css" media="all">
+    <link rel="stylesheet" href="css/print.css" media="print">
+  </head>
+
+  <body>
+  	<div class="main-header">
+
+  		<div class="inside">
+  			<ul class="skip-links">
+  				<li><a href="#main">contenu</a></li>
+  				<li><a href="#navigation">navigation</a></li>
+  			</ul>
+
+  			<header role="banner" class="header  clear" id="banner">
+  				<h1 class="title">Guide de l'auditeur RGAA&nbsp;3</h1>
+  			</header>
+
+			<nav role="navigation" class="gp-sommaire" id="navigation" aria-label="Sommaire du guide">
+				<button id="btnSommaire" aria-expanded="false">Sommaire</button>
+				<ul class="sommaire is-hidden" id="sommaireToggle">
+					<li><a href="index.html">Introduction</a></li>
+					<li><span>Préparation de l'audit</span>
+						<ul>
+							<li><a href="1-audit-preparation.html">Préparation de l'audit (contexte, niveau et base de référence)</a></li>
+							<li><a href="1.2-echantillon.html">Construction de l'échantillon de test</a></li>
+						</ul>
+					</li>
+					<li><span>Conduite de l'audit</span>
+						<ul>
+							<li><a href="2-conduite-audit.html">Conduite de l'audit&nbsp;: évaluation de la conformité et dérogations</a></li>
+							<li><a href="2.1-realisation-audit.html">Conduite de l'audit&nbsp;: réalisation de l'audit</a></li>
+						</ul>
+					</li>
+					<li><a href="3-restitution.html">Restitution</a></li>
+					<li><a href="ressources.html">Ressources</a></li>
+				</ul>
+			</nav>
+
+  			<div class="github-link">
+  				<p><a title="Contribuer sur Github" href="https://github.com/DISIC/guide-auditeur/">Contribuer</a>
+			<a class="pdfdown" title="Télécharger le guide de l'auditeur RGAA (pdf, 396 ko)" href="export/guide-auditeur.pdf" download>Télécharger</a></p>
+  			</div>
+  			</div>
+  		</div>
+
+	<div id="wrapper">
+
+	<nav role="navigation" class="internav clear">
+		<ul>
+			<li><a class="prev" href="2-conduite-audit.html"><span aria-hidden="true"> &laquo;</span>&nbsp;Conduite de l'audit&nbsp;: évaluation de la conformité et dérogations</a></li>
+			<li><a class="next" href="3-restitution.html">Restitution&nbsp;<span aria-hidden="true">&raquo; </span></a></li>
+		</ul>
+	</nav>
+
+		<main id="main" role="main">
+			<h1 class="fiche-title">Conduite de l'audit</h1>
+			<article class="article">
+				<h2>Réalisation de l'audit</h2>
+				<p>Maintenant que tout est prêt et que l’échantillon est validé, vous pouvez réaliser l’audit de conformité RGAA. <a href="#ftn1" id="body-ftn1">Des modèles de documents<sup>[1]</sup></a> sont mis à votre disposition, et notamment une grille d’audit. Cette grille vous propose de fonctionner par onglet&nbsp;: un onglet par page auditée. Tous les critères du RGAA sont repris, avec leur niveau. Selon le niveau de conformité souhaité, certains critères vont pouvoir être directement évalués en non applicable. Par exemple, si vous réalisez un audit du niveau double A (AA), tous les critères triple A (AAA) sont non applicables. Il en va de même pour une évaluation de niveau simple A, les critères double A (AA) et triple A (AAA) deviennent non applicables.</p>
+				<p class="important"><strong>Important&nbsp;: </strong>La grille d’audit ne reprend que l’intitulé du critère, vous devez toujours travailler avec le référentiel technique pour vous référer aux tests, notes techniques, cas particuliers et glossaire.</p>
+			</article>
+
+			<article class="article">
+				<h3>Méthodologie de tests</h3>
+				<p>Il n'existe pas une méthodologie de référence pour mettre à l'épreuve les tests du RGAA. Toutefois, il existe des techniques et outils largement répandus et partagés. Le W3C a d'ailleurs établi une liste d'outils pour l'évaluation<a href="#ftn2" id="body-ftn2"><sup>[2]</sup></a>.</p>
+				<p>Vous pourrez trouver des outils automatiques, qui vous aideront dans l'évaluation des critères de présence (par exemple, test 1.1.1 «&nbsp;<i>Test 1.1.1 &nbsp;: Chaque image (balise <code lang="en">img</code>) a-t-elle un attribut <code lang="en">alt</code>&nbsp;?</i>&nbsp;»). Néanmoins, la plus grosse partie du travail reste entièrement dépendante de l'évaluation de l'auditeur. Les outils permettent de rendre l'évaluation plus rapide et les conditions d'évaluation optimales. Ce peut être des barres d'outils disponibles dans les navigateurs web, des feuilles CSS personnalisées, des <span lang="en">bookmarklets</span> JavaScript&hellip;</p>
+				<p>La DINSIC a produit <a href="#ftn3" id="body-ftn3">une méthodologie<sup>[3]</sup></a>, qui définit pour chaque critère et test, deux méthodes au moins (selon les capacités des navigateurs et des extensions pour l'évaluation d'un critère donné). Lorsque c'est possible, une méthode est proposée pour chacun des 3 navigateurs les plus populaires&nbsp;: Internet <span lang="en">Explorer</span>, <span lang="en">Firefox</span> et Chrome.</p>
+			</article>
+
+			<article class="article">
+				<h3>Éléments communs aux pages</h3>
+				<p>Aujourd’hui, un site web qui n’est pas réalisé avec un outil de gestion de contenu (<abbr title="Outil de gestion de contenus">CMS</abbr> par exemple) fait exception. Avec cette industrialisation des sites web, les éléments de gabarits (navigation, entête, pied de page…) sont identiques (même code source, même fonctionnement…) sur toutes les pages du site, ou sur un même ensemble de pages. Bien qu’il soit demandé d’évaluer tous les composants d’une page pour la déclarer conforme ou non conforme, il est possible de faire l’économie d’auditer plus de 15 fois le même code (par exemple la navigation), lorsqu’on est assuré qu’il est le même sur toutes les pages.</p>
+				<p>Vous pouvez relever la non-conformité une seule fois la première fois qu'elle est rencontrée et ne plus auditer cette partie de contenu répété sur les autres pages. Si nécessaire, vous pouvez reporter systématiquement la non-conformité sur toutes les pages directement ou par l'intermédiaire d'une référence, par exemple «&nbsp;<i>voir page x</i>&nbsp;».</p>
+			</article>
+
+			<article class="article">
+				<h3>État des pages</h3>
+				<p>Lorsque vous auditez une page, vous devez procéder en plusieurs étapes. En tout premier lieu, vous devez auditer la page dans son état standard, sans activer d’éléments. Ensuite, une fois que vous avez repéré tous les éléments susceptibles d’être interactifs (un menu déroulant, un formulaire, etc.), manipulez-les pour déclencher les actions et évaluer les éventuelles mises à jour de contenu.</p>
+				<p>Dans le cas des formulaires, une démarche de test pertinente est la suivante&nbsp;:</p>
+				<ol>
+					<li>auditer le formulaire vide&nbsp;;</li>
+					<li>soumettre le formulaire vide et constater s’il existe un contrôle de saisie qu’il faudrait évaluer&nbsp;;</li>
+					<li>soumettre le formulaire avec des données susceptibles de provoquer des erreurs s’il existe un contrôle de format (par exemple, pour une adresse mail, omettez l’arobase) qu’il faudrait évaluer également&nbsp;;</li>
+					<li>enfin, soumettre le formulaire avec des données qui vont vous permettre de réaliser une soumission correcte du formulaire pour constater l’événement déclenché, et auditer les éventuelles mises à jour de contenu.</li>
+				</ol>
+			</article>
+
+			<article class="article">
+				<h3>Preuve de la non-conformité</h3>
+				<p>Aucune obligation n’est faite sur la méthodologie à employer pour évaluer un critère, de même qu'aucune méthodologie ou qu'aucun outil n’a valeur de preuve au regard de l’évaluation d’un critère. Vous êtes libre de choisir les outils et méthodes que vous souhaitez, ce qui importe c’est la délivrance de la preuve de la non conformité ou de la conformité. Vous êtes responsable de la preuve. Cette preuve doit être vérifiable par un tiers et reproductible.</p>
+				<p>Lors d’un audit, vous documentez généralement exclusivement les cas de non conformité. En tant qu’auditeur, il vous incombe donc d’établir, pour chaque non conformité, la liste des preuves vérifiables et reproductibles. Ce peut être&nbsp;:</p>
+				<ul>
+					<li>un extrait du code source (par exemple pour démontrer l’absence d’attribut <code lang="en">alt</code> sur une image) qui pourra être retrouvé facilement par l’administration&nbsp;;</li>
+					<li>l’énonciation de la démarche employée (par exemple, pour démontrer un problème à l’agrandissement des caractères vous décrirez la méthode employée afin que l’administration puisse la reproduire et constater la même non conformité)&nbsp;;</li>
+					<li>une capture d'écran.</li>
+				</ul>
+				<p>Selon le principe d’une approche fondée sur la preuve, les critères de pertinence du référentiel technique du RGAA ne peuvent être invalidés que lorsqu’il est prouvé que cela pose un problème réel en matière d’accès à l’information, aux contenus, aux fonctionnalités ou à leur bonne compréhension. Un critère de pertinence ne devrait pas être évalué.</p>
+				<p>Ces preuves de non-conformité sont à reporter dans la grille d’audit, dans la colonne «&nbsp;Commentaires&nbsp;» en regard du critère incriminé.</p>
+				<p>En cas de doute sur un test, la méthodologie associée au RGAA peut faire référence. Par exemple, dans le cas où un outil considère que tel test est non conforme et que l'application de la méthodologie vous conduit à considérer qu'il est conforme.
+			</article>
+
+			<article class="article">
+				<h3>Un exemple et une proposition de correction</h3>
+				<p>Pour chaque critère non conforme, vous devez donner au moins un exemple de non conformité, mais vous n’êtes pas tenu de citer toutes les occurrences d’une non conformité, sous réserve d’avertir l’administration dans votre relevé qu’il existe d’autres occurrences, et de lui fournir un moyen de repérer les autres occurrences.</p>
+				<p>Par exemple, pour le critère 13.2 «&nbsp;<i>Dans chaque page web, pour chaque ouverture de nouvelle fenêtre, l’utilisateur est-il averti&nbsp;?</i>&nbsp;». Si vous détectez 50 liens qui ouvrent des nouvelles fenêtres, vous indiquerez dans votre relevé des non conformités un seul exemple (code source d’un des liens en défaut). Vous indiquerez qu’il existe d’autres liens qui présentent la même erreur, comment les détecter et comment les réparer.</p>
+				<p>Exemple de commentaire pour une non-conformité pour le critère 13.2&nbsp;:</p>
+				<div class="exemple">
+					<p><i>On trouve dans la page des liens qui ouvrent des nouvelles fenêtres. Par exemple&nbsp;:</i></p>
+					<pre><code>&lt;a href="url.html" target="_blank"&gt;Site du gouvernement&lt;/a&gt;</code></pre>
+					<p><i>Pour tous les liens qui ouvrent une nouvelle fenêtre (liens possédant la propriété target avec une valeur différente de <code lang="en">_self </code> ou <code lang="en">_parent</code>, ou liens gérés par JavaScript qui déclenchent l'ouverture de nouvelles fenêtres), vous devez avertir l’utilisateur, par exemple, en implémentant un titre de lien (attribut <code lang="en">title</code>) sur le modèle&nbsp;:</i></p>
+					<pre><code>&lt;a href="url.html" target="_blank" title="site du gouvernement nouvelle fenêtre"&gt;Site du gouvernement&lt;/a&gt;</code></pre>
+				</div>
+			</article>
+
+			<article class="footnote">
+				<ol>
+					<li id="ftn1"> <a href="https://github.com/DISIC/rgaa_modeles_documents">Modèles de documents pour la réalisation d'un audit</a> (<a href="#body-ftn1">retour au texte</a>)</li>
+					<li id="ftn2"> <a href="https://www.w3.org/WAI/ER/tools/" lang="en" hreflang="en">Web Accessibility Evaluation Tools List</a> (<a href="#body-ftn2">retour au texte</a>)</li>
+					<li id="ftn3"> <a href="http://disic.github.io/rgaa_methodologie/">Méthodologie de test RGAA 3</a> (<a href="#body-ftn3">retour au texte</a>)</li>
+				</ol>
+			</article>
+
+			</main>
+
+<footer id="footer" role="contentinfo" class="clear">
+		<h2>Licence d'utilisation</h2>
+		<p class="logo-smgap"><a href="http://references.modernisation.gouv.fr/"><img src="img/modernisation-logo.jpg" alt="Secrétariat général pour le modernisation de l'action publique"></a></p>
+		<p>Ce document est la propri&#233;t&#233; du Secr&#233;tariat g&#233;n&#233;ral &#224; la modernisation de l'action publique fran&#231;ais (SGMAP). Il est plac&#233; sous la <a href="https://www.etalab.gouv.fr/licence-ouverte-open-licence">licence ouverte 1.0 ou ult&#233;rieure</a>, &#233;quivalente &#224; une licence <i lang="en">Creative Commons BY</i>. Pour indiquer la paternit&#233;, ajouter un lien vers la version originale du document disponible sur le <a href="https://github.com/DISIC">compte <span lang="en">GitHub</span> de la DInSIC</a>.</p>
+
+	</footer>
+
+							</div>
+
+							<script src="js/script.js"></script>
+
+						</body>
+						</html>

@@ -1,0 +1,169 @@
+<!DOCTYPE HTML>
+<html lang="fr">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+	<title>Préparation de l'audit - Guide de l'auditeur RGAA&nbsp;3</title>
+
+  <!--[if lt IE 9]>
+    <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link rel="stylesheet" href="css/styles.css" media="all">
+    <link rel="stylesheet" href="css/print.css" media="print">
+  </head>
+
+  <body>
+  	<div class="main-header">
+
+  		<div class="inside">
+  			<ul class="skip-links">
+  				<li><a href="#main">contenu</a></li>
+  				<li><a href="#navigation">navigation</a></li>
+  			</ul>
+
+  			<header role="banner" class="header  clear" id="banner">
+  				<h1 class="title">Guide de l'auditeur RGAA&nbsp;3</h1>
+  			</header>
+
+			<nav role="navigation" class="gp-sommaire" id="navigation" aria-label="Sommaire du guide">
+				<button id="btnSommaire" aria-expanded="false">Sommaire</button>
+				<ul class="sommaire is-hidden" id="sommaireToggle">
+					<li><a href="index.html">Introduction</a></li>
+					<li><span>Préparation de l'audit</span>
+						<ul>
+							<li><a href="1-audit-preparation.html">Préparation de l'audit (contexte, niveau et base de référence)</a></li>
+							<li><a href="1.2-echantillon.html">Construction de l'échantillon de test</a></li>
+						</ul>
+					</li>
+					<li><span>Conduite de l'audit</span>
+						<ul>
+							<li><a href="2-conduite-audit.html">Conduite de l'audit&nbsp;: évaluation de la conformité et dérogations</a></li>
+							<li><a href="2.1-realisation-audit.html">Conduite de l'audit&nbsp;: réalisation de l'audit</a></li>
+						</ul>
+					</li>
+					<li><a href="3-restitution.html">Restitution</a></li>
+					<li><a href="ressources.html">Ressources</a></li>
+				</ul>
+			</nav>
+
+  			<div class="github-link">
+  				<p><a title="Contribuer sur Github" href="https://github.com/DISIC/guide-auditeur/">Contribuer</a>
+			<a class="pdfdown" title="Télécharger le guide de l'auditeur RGAA (pdf, 396 ko)" href="export/guide-auditeur.pdf" download>Télécharger</a></p>
+  			</div>
+  			</div>
+  		</div>
+
+	<div id="wrapper">
+
+	<nav role="navigation" class="internav clear">
+		<ul>
+			<li><a class="prev" href="index.html"><span aria-hidden="true"> &laquo;</span>&nbsp;Introduction</a></li>
+			<li><a class="next" href="1.2-echantillon.html">Construction de l'échantillon de test&nbsp;<span aria-hidden="true">&raquo; </span></a></li>
+		</ul>
+	</nav>
+
+		<main id="main" role="main">
+			<h1 class="fiche-title">Préparation de l'audit</h1>
+			<article class="article">
+					<p>Avant de démarrer un audit, vous devez définir un certain nombre d'éléments&nbsp;:</p>
+					<ul>
+						<li>le contexte de l’audit&nbsp;;</li>
+						<li>le niveau de conformité à confronter&nbsp;;</li>
+						<li>la base de référence pour réaliser les tests de restitution&nbsp;;</li>
+						<li>l’échantillon de pages qui sera testé.</li>
+					</ul>
+			</article>
+
+			<article class="article">
+				<h2>Contexte</h2>
+				<p>Un audit peut intervenir à diverses occasions&nbsp;:</p>
+				<ul>
+					<li>Préparation à une labellisation ou à la rédaction et publication d'une déclaration de conformité&nbsp;;</li>
+					<li>Réalisation d'un état de l'existant généralement pour trancher sur une question de refonte&nbsp;;</li>
+					<li>Suivi d'un site en développement&nbsp;;</li>
+					<li>Audit de contrôle&hellip;</li>
+				</ul>
+				<p>Préciser le contexte de l'audit va vous permettre d'adapter la préparation de l'échantillon ainsi que les recommandations que vous ferez.</p>
+				<p>On peut classer les audits et les recettes en deux grandes familles&nbsp;:</p>
+				<h3>Les audits destinés à préparer et accompagner la mise en accessibilité des contenus.</h3>
+				<p>Dans ces types d'audits, il s'agit de relever les non-conformités et de proposer des solutions de corrections. Ces audits peuvent également servir de base à la priorisation des problématiques rencontrées afin de prendre en compte les contraintes du projet.</p>
+				<p>Ces audits sont les plus longs à mener, ils doivent être les plus complets possible car ils seront le socle technique du projet d'accessibilité.</p>
+				<h3>Audits d'évaluation et de certification.</h3>
+				<p>Les audits d'évaluation vont permettre d'obtenir une vue instantanée du niveau de conformité d'un site, ils s'effectuent le plus souvent sur un échantillon de critères représentatifs et un échantillon de pages réduit. Ils ne comportent généralement pas de préconisation de correction.</p>
+				<p>Les audits de certification ont pour vocation d'attester, lors d'une procédure de certification ou de déclaration légale, le niveau de conformité atteint par le site ou l'application.</p>
+				<p>Ces audits ne comportent généralement pas de préconisation de correction, ce n'est pas le but recherché, il s'agit de fournir un relevé des non-conformités qui sera le socle technique de la mesure de conformité.</p>
+				<p>Ils doivent être menés avec beaucoup de rigueur et dans le cas d'une labellisation par exemple, selon une procédure établie qui peut comporter des différences notables avec l'audit classique. Par exemple, le label e-accessible propose des niveaux différents de ceux du RGAA.</p>
+				<p>Dans les deux cas, la procédure de mise en place et de préparation est identique.</p>
+
+			</article>
+
+			<article class="article">
+				<h2 class="fiche-title">Niveau de conformité</h2>
+				<p>Vous devez définir en accord avec l'administration, le niveau de conformité à évaluer.</p>
+				<blockquote><p>Afin de répondre aux besoins de divers groupes et de différents contextes, trois niveaux de conformité ont été définis&nbsp;: A (le plus bas), AA et AAA (le plus élevé)<a href="#ftn1" id="body-ftn1"><sup>[1]</sup></a>.</p></blockquote>
+				<p>Les critères de succès sont associés à l’un des niveaux A, AA et AAA <a href="#ftn2" id="body-ftn2">sur la base de divers facteurs<sup>[2]</sup></a>.</p>
+				<p>Par ailleurs, le niveau AAA possède la particularité de ne pas s’appliquer à tous les contenus ou dans tous les contextes&nbsp;:</p>
+				<blockquote><p>Il n’est pas recommandé de se fixer le niveau AAA comme objectif à l’échelle de sites entiers car il n’est pas possible de satisfaire à tous les critères de succès du niveau AAA pour certains contenus<a href="#ftn3" id="body-ftn3"><sup>[3]</sup></a>.</p></blockquote>
+				<p><a href="#ftn4" id="body-ftn4">Le niveau recommandé par l’Union européenne est le niveau double A (AA) <sup>[4]</sup></a>. C’est également le niveau attendu pour les sites concernés par le RGAA. À ce titre, pour être conforme au RGAA, il est nécessaire de valider l’ensemble des critères ayant un niveau WCAG déduit A et AA. Les critères de succès associés au niveau AAA peuvent être pris en compte dans certains contextes, lorsque cela est possible et pertinent.</p>
+				<p>Selon le contexte et la demande de l’administration, vous devez donc spécifier, avant de réaliser l’audit, le niveau à évaluer et donc les critères à évaluer. Ceci dit, <strong>compte tenu du contexte juridique, il est très souvent souhaitable de réaliser un audit de niveau AA.</strong></p>
+			</article>
+
+			<article class="article">
+			<h2>Base de référence</h2>
+				<p>Plusieurs critères RGAA font référence à des tests de restitution à effectuer sur un ensemble de technologies d’assistance (TA), de navigateurs et de systèmes d’exploitation. Vous devez définir cette base de référence avant de commencer l’audit.</p>
+				<p>Il s'agit essentiellement de tests à réaliser sur des composants développés avec l'API ARIA afin de s'assurer que les restitutions sont correctes.</p>
+				<p>La base de référence est constituée des configurations (technologie d’assistance, système d’exploitation, navigateur) qui permettent de déclarer qu’un dispositif est «&nbsp;compatible avec l’accessibilité&nbsp;»&nbsp;:</p>
+				<blockquote><p>Un contenu ou une fonctionnalité doit être compatible avec les technologies d’assistance des utilisateurs ainsi qu’avec les fonctions d’accessibilité des navigateurs et des autres agents utilisateurs via une API d’accessibilité<a href="#ftn5" id="body-ftn5"><sup>[5]</sup></a>.</p></blockquote>
+				<p>Toutefois, ni WCAG ni le W3C ne spécifient quelles technologies ou encore combien de ces technologies doivent être évaluées pour qu’un composant puisse être déclaré conforme.</p>
+				<p>Ainsi, le RGAA a décrit une base de référence établie par consensus à partir de la liste des technologies d’assistance dont l’usage est suffisamment répandu, ou dans certains cas lorsqu’elle est fournie de manière native et constitue le moyen privilégié d’accès à l’information et aux fonctionnalités.</p>
+				<p>La base de référence permettant de couvrir la proportion la plus large des usages est constituée de combinaisons associant des technologies d’assistance d’usage suffisamment répandu, les deux systèmes d’exploitation Windows XP+ et OSX/macOS et les trois navigateurs IE9+, Firefox et Safari.</p>
+				<p>Pour qu’un dispositif HTML5/ARIA ou son alternative soit considéré comme compatible avec l’accessibilité, il faut qu’il soit pleinement fonctionnel, en matière de de restitution et de fonctionnalités, sur au moins une des combinaisons décrites dans la <a href="#ftn6" id="body-ftn6">base de référence du référentiel technique<sup>[6]</sup></a>. À moins d’être dans un environnement maîtrisé, c’est avec l’une de ces combinaisons que vous devez tester les composants identifiés. La DINSIC met à disposition <a href="#ftn7" id="body-ftn7">un guide pour évaluer l'accessibilité des composants à l'aide des lecteurs d'écrans&nbsp;<sup>[7]</sup></a>.</p>
+			</article>
+			
+			<article class="article">
+				<h3>Environnement maîtrisé</h3>
+				<p>Lorsque le site web est destiné à être diffusé et utilisé dans un environnement maîtrisé, la base de référence est constituée des configurations (technologie d’assistance, système d’exploitation, navigateur) effectivement utilisées dans l’environnement maîtrisé.</p>
+				<p>Par exemple, lorsque le site web est exclusivement diffusé dans un environnement GNU/Linux, les tests devront être réalisés uniquement sur les navigateurs et les technologies d’assistance utilisés par les agents sur cette plateforme. Cette base de référence se substitue à la base de référence utilisée en environnement non maîtrisé.</p>
+				<p>Un environnement est maîtrisé si l’accès à l’information, les technologies, les conditions d’utilisation et le profil des utilisateurs peuvent être connus a priori et donc maîtrisés. Les principaux éléments dont la maîtrise est essentielle sont&nbsp;:</p>
+				<ul>
+					<li>Le type et la version des navigateurs&nbsp;;</li>
+					<li>Les technologies supportées, leur version et leur activation (JavaScript, WAI-ARIA, Flash, <span lang="en">Silverlight</span>&hellip;)&nbsp;;</li>
+					<li>Les technologies d’assistance et tout dispositif utilisé de manière spécifique par les utilisateurs handicapés&nbsp;;</li>
+					<li>Les systèmes d’exploitation et les APIs d’accessibilité supportées&nbsp;;</li>
+					<li>La formation des utilisateurs de technologies d’assistance à l’utilisation de tout dispositif particulier (interface, application en ligne…). </li>
+				</ul>
+				<p>Les auteurs et les administrateurs doivent garantir la compatibilité des technologies utilisées et de leurs usages par les utilisateurs et leurs technologies (y compris les technologies d’assistance). <strong>Les services d’information ou les sites web, quel que soit leur statut, qui offrent un accès public ne peuvent pas être considérés comme des environnements maîtrisés.</strong></p>
+			</article>
+			<article class="article">
+				<h3>Adaptation de la base de référence.</h3>
+				<p>La base de référence proposée par le RGAA n'est qu'un socle de base. Si nécessaire, elle peut être adaptée et étendue à des technologies d'assistances ou des contextes de consultation différents.</p>
+				<p>Cela peut-être le cas par exemple en enrichissant la base de référence des technologies d'assistance pour mobile comme <span lang="en">Voice Over</span> pour iOS ou de <span lang="en">Talkback</span> pour <span lang="en">Android</span> pour citer les deux cas les plus couramment rencontrés.</p>
+				<p>En dehors du cas spécifique des environnements maîtrisés, les technologies d'assistance proposées dans la base de référence du RGAA devraient être systématiquement conservées.</p>
+			</article>
+
+			<article class="footnote">
+				<ol>
+					<li id="ftn1">Source&nbsp;: traduction française agréée des WCAG&nbsp;2.0, chapitre «&nbsp;<a href="https://www.w3.org/Translations/WCAG20-fr/#conformance-reqs">Les exigences de conformité</a>&nbsp;» (<a href="#body-ftn1">retour au texte</a>)</li>
+					<li id="ftn2">Source&nbsp;: traduction française agréée des WCAG&nbsp;2.0, chapitre «&nbsp;<a href="http://www.w3.org/Translations/NOTE-UNDERSTANDING-WCAG20-fr/conformance.html#uc-levels-head">Comprendre les niveaux de conformité</a>&nbsp;» (<a href="#body-ftn2">retour au texte</a>)</li>
+					<li id="ftn3">Source&nbsp;: traduction française agréée des WCAG&nbsp;2.0, chapitre «&nbsp;<a href="https://www.w3.org/Translations/WCAG20-fr/#conformance-reqs">Les exigences de conformité</a>&nbsp;» (<a href="#body-ftn3">retour au texte</a>)</li>
+					<li id="ftn4">Le point 31 de la <a href="http://www.europarl.europa.eu/sides/getDoc.do?pubRef=-//EP//TEXT+TA+P5-TA-2002-0325+0+DOC+XML+V0//FR">résolution du Parlement européen du 13 juin 2002</a> précise&nbsp;que tous les sites publics européens doivent avoir le niveau double A (AA) du W3C/WAI (<a href="#body-ftn4">retour au texte</a>)</li>
+					<li id="ftn5"><a href="http://references.modernisation.gouv.fr/referentiel/glossaire.html#compatible-avec-les-technologies-dassistance">Définition «&nbsp;Compatible avec les technologies d’assistance&nbsp;» issue du glossaire du RGAA&nbsp;3</a> (<a href="#body-ftn5">retour au texte</a>)</li>
+					<li id="ftn6"><a href="http://references.modernisation.gouv.fr/referentiel/base-de-reference.html">Base de référence du RGAA&nbsp;3</a> (<a href="#body-ftn6">retour au texte</a>)</li>
+					<li id="ftn7"><a href="https://disic.github.io/guide-lecteurs_ecran/">Guide sur les lecteurs d'écran</a> (<a href="#body-ftn7">retour au texte</a>)</li>
+				</ol>
+			</article>
+			</main>
+
+<footer id="footer" role="contentinfo" class="clear">
+		<h2>Licence d'utilisation</h2>
+		<p class="logo-smgap"><a href="http://references.modernisation.gouv.fr/"><img src="img/modernisation-logo.jpg" alt="Secrétariat général pour le modernisation de l'action publique"></a></p>
+		<p>Ce document est la propri&#233;t&#233; du Secr&#233;tariat g&#233;n&#233;ral &#224; la modernisation de l'action publique fran&#231;ais (SGMAP). Il est plac&#233; sous la <a href="https://www.etalab.gouv.fr/licence-ouverte-open-licence">licence ouverte 1.0 ou ult&#233;rieure</a>, &#233;quivalente &#224; une licence <i lang="en">Creative Commons BY</i>. Pour indiquer la paternit&#233;, ajouter un lien vers la version originale du document disponible sur le <a href="https://github.com/DISIC">compte <span lang="en">GitHub</span> de la DInSIC</a>.</p>
+
+	</footer>
+
+							</div>
+
+							<script src="js/script.js"></script>
+
+						</body>
+						</html>

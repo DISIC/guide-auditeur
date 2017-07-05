@@ -1,0 +1,190 @@
+<!DOCTYPE HTML>
+<html lang="fr">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+	<title>Conduite de l'audit - Guide de l'auditeur RGAA&nbsp;3</title>
+
+  <!--[if lt IE 9]>
+    <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link rel="stylesheet" href="css/styles.css" media="all">
+    <link rel="stylesheet" href="css/print.css" media="print">
+  </head>
+
+  <body>
+  	<div class="main-header">
+
+  		<div class="inside">
+  			<ul class="skip-links">
+  				<li><a href="#main">contenu</a></li>
+  				<li><a href="#navigation">navigation</a></li>
+  			</ul>
+
+  			<header role="banner" class="header  clear" id="banner">
+  				<h1 class="title">Guide de l'auditeur RGAA&nbsp;3</h1>
+  			</header>
+
+			<nav role="navigation" class="gp-sommaire" id="navigation" aria-label="Sommaire du guide">
+				<button id="btnSommaire" aria-expanded="false">Sommaire</button>
+				<ul class="sommaire is-hidden" id="sommaireToggle">
+					<li><a href="index.html">Introduction</a></li>
+					<li><span>Préparation de l'audit</span>
+						<ul>
+							<li><a href="1-audit-preparation.html">Préparation de l'audit (contexte, niveau et base de référence)</a></li>
+							<li><a href="1.2-echantillon.html">Construction de l'échantillon de test</a></li>
+						</ul>
+					</li>
+					<li><span>Conduite de l'audit</span>
+						<ul>
+							<li><a href="2-conduite-audit.html">Conduite de l'audit&nbsp;: évaluation de la conformité et dérogations</a></li>
+							<li><a href="2.1-realisation-audit.html">Conduite de l'audit&nbsp;: réalisation de l'audit</a></li>
+						</ul>
+					</li>
+					<li><a href="3-restitution.html">Restitution</a></li>
+					<li><a href="ressources.html">Ressources</a></li>
+				</ul>
+			</nav>
+
+  			<div class="github-link">
+  				<p><a title="Contribuer sur Github" href="https://github.com/DISIC/guide-auditeur/">Contribuer</a>
+			<a class="pdfdown" title="Télécharger le guide de l'auditeur RGAA (pdf, 396 ko)" href="export/guide-auditeur.pdf" download>Télécharger</a></p>
+  			</div>
+  			</div>
+  		</div>
+
+	<div id="wrapper">
+
+	<nav role="navigation" class="internav clear">
+		<ul>
+			<li><a class="prev" href="1.2-echantillon.html"><span aria-hidden="true"> &laquo;</span>&nbsp;Construction de l'échantillon de test</a></li>
+			<li><a class="next" href="2.1-realisation-audit.html">Conduite de l'audit&nbsp;: réalisation de l'audit&nbsp;<span aria-hidden="true">&raquo; </span></a></li>
+		</ul>
+	</nav>
+
+		<main id="main" role="main">
+			<h1 class="fiche-title">Conduite de l'audit</h1>
+			<article class="article">
+				<h2>Évaluation de la conformité</h2>
+				<p>En se basant sur le <a href="#ftn1" id="body-ftn1">schéma EARL (<span lang="en">Evaluation And Report Language</span>) du W3C <sup>[1]</sup></a>, qui définit 3 statuts pour un critère (conforme, non conforme et non applicable), le RGAA 3 étend les statuts disponibles pour chaque critère afin d’enrichir les dispositifs de mesure. Pour le référentiel technique du RGAA&nbsp;3, un critère peut avoir l’un des 4 statuts suivants&nbsp;:</p>
+				<ul>
+					<li>Conforme&nbsp;: l’ensemble des tests applicables sont réussis&nbsp;;</li>
+					<li>Non conforme&nbsp;: un test applicable est échoué au moins&nbsp;; </li>
+					<li>Non applicable&nbsp;: il n’y a pas de contenu concerné par le critère&nbsp;;</li>
+					<li>Non testé&nbsp;: le critère n’a pas été testé (nouveau statut permettant de mesurer la progression de l’audit).</li>
+				</ul>
+			</article>
+
+			<article class="article">
+				<h3>Critère conforme</h3>
+				<p>Un critère est considéré comme conforme sur une page donnée si pour chacun des éléments concernés par le critère, les tests sont conformes.</p>
+				<p>Par exemple, si l'on applique le critère 1.2 «<i>&nbsp;Pour chaque image de décoration ayant une alternative textuelle, cette alternative est-elle vide&nbsp;?&nbsp;</i>» à une image contenue dans une balise <code lang="en">img</code>, seul le test 1.2.1 s’applique. Les autres tests sont non applicables car ils ne concernent pas l'élément <code lang="en">img</code>.</p>
+				<div class="exemple">
+					<p>Test 1.2.1&nbsp;: Chaque image (balise <code>img</code>) de décoration, sans légende, et ayant un attribut <code>alt</code>, vérifie-t-elle ces conditions&nbsp;?</p>
+					<ul>
+						<li>Le contenu de l’attribut alt est vide (alt="")&nbsp;;</li>
+						<li>L’image de décoration ne possède pas d’attribut title&nbsp;;</li>
+						<li>La balise img est dépourvue de rôle, propriété ou état ARIA visant à labelliser l’image (<code lang="en">aria-label</code>, <code lang="en">aria-describedby</code>, <code lang="en">aria-labelledby</code> par exemple).</li>
+					</ul>
+				</div>
+				<pre><code>&lt;img alt="" src="image.jpg" /&gt;</code></pre>
+				<p>Cette implémentation est conforme puisque le contenu de l’attribut alt est vide, l’image n’a pas d’attribut <code lang="en">title</code> ni aucun rôle ou propriété ARIA. Dans ce cas, le test 1.2.1 est conforme et les autres tests non applicables. Le critère 1.2 est donc conforme.</p>
+				<pre><code>&lt;img alt="" title="" src="image.jpg" /&gt;</code></pre>
+				<p>Cette implémentation est non conforme puisque la seconde condition relative à l’absence de l’attribut <code lang="en">title</code> n’est pas remplie. Dans ce cas, le test 1.2.1 est non conforme et les autres tests non applicables. Le critère 1.2 est donc non conforme.</p>
+				<p><strong>À noter qu’il suffit d’un élément non conforme pour qu’un critère donné soit évalué non conforme.</strong></p>
+			</article>
+
+			<article class="article">
+				<h3>Page conforme</h3>
+				<p>Pour une page, voici comment chacun des niveaux est défini<a href="#ftn2" id="body-ftn2"><sup>[2]</sup></a>&nbsp;:</p>
+				<ul>
+					<li>Niveau A&nbsp;: pour une conformité de niveau A (le niveau minimal), la page web satisfait à tous les critères de succès de niveau A ou une version de remplacement est fournie.</li>
+					<li>Niveau AA&nbsp;: pour une conformité de niveau AA, la page web remplit tous les critères de succès de niveau A et AA ou une version de remplacement conforme au niveau AA est fournie.</li>
+					<li>Niveau AAA&nbsp;: pour une conformité de niveau AAA, la page web remplit tous les critères de succès de niveau A, AA et AAA ou une version de remplacement conforme au niveau AAA est fournie.</li>
+				</ul>
+				<p>Pour qu’une page soit déclarée conforme au RGAA, elle doit satisfaire à 4 exigences de conformité&nbsp;:</p>
+				<ul>
+					<li>Le niveau double A (AA) au moins doit être atteint.</li>
+					<li>La conformité (et le niveau de conformité) s’entend uniquement pour des pages web complètes et ne peut être atteinte si une partie de la page web est exclue.</li>
+					<li>Quand une page web fait partie d’un ensemble représentant un processus (comme une succession d’étapes devant être complétées afin d’accomplir une activité), toutes les pages web du processus sont conformes au moins au niveau spécifié, la conformité à un certain niveau est impossible s’il existe une page de ce processus qui n’atteint pas au moins ce niveau.</li>
+					<li>Si des technologies sont employées de manière non compatible avec l’accessibilité ou non conforme, alors elles ne doivent pas empêcher les utilisateurs d’accéder au reste de la page. De plus, s'il existe des composants interactifs non conformes dans la page, mais dérogés car disposant d'une alternative accessible, ils ne doivent pas entraver ou perturber l'accès à l'information des utilisateurs. À ce titre, les critères suivants sont particulièrement concernés et doivent, même si les contenus concernés sont dérogés, demeurer conformes. S'ils sont évalués non conformes pour des contenus dérogés, la grille d'audit devrait le mentionner.
+						<ul>
+							<li>Critère 4.18 [A] Chaque son déclenché automatiquement est-il contrôlable par l’utilisateur&nbsp;?</li>
+							<li>Critère 12.14 [A] Dans chaque page Web, la navigation ne doit pas contenir de piège au clavier. Cette règle est-elle respectée&nbsp;?</li>
+							<li>Critère 13.1 [A] Pour chaque page Web, l’utilisateur a-t-il le contrôle de chaque limite de temps modifiant le contenu (hors cas particuliers)&nbsp;?</li>
+							<li>Critère 13.15 [A] Dans chaque page Web, les changements brusques de luminosité ou les effets de flash sont-ils correctement utilisés&nbsp;?</li>
+							<li>Critère 13.17 [A] Dans chaque page Web, chaque contenu en mouvement ou clignotant est-il contrôlable par l’utilisateur&nbsp;?</li>
+						</ul>
+					</li>
+				</ul>
+			</article>
+
+			<article class="article">
+				<h3>Échantillon conforme et calcul de la conformité</h3>
+				<p>Sur le principe du calcul de la conformité pour une page, il suffit d'un critère non conforme sur une page pour que le critère soit non conforme pour l'échantillon entier.</p>
+				<p>Il est possible de calculer des pourcentages de conformité sur la base des évaluations. Ce calcul peut s'avérer utile dans les contextes d'audits de suivi, il permet par exemple de donner un indice de progression d'un audit sur l'autre.</p>
+				<p>Ces proportions calculées n'ont qu'une valeur informative. En effet, l'objectif à atteindre est 100% pour les niveaux simple A et double A. Dans le cas d'un audit de contrôle, ce résultat ne doit pas être interprété au-delà de ce qu'il représente, c'est-à-dire une proportion de critères conformes et non conformes. Compte tenu de la disparité des critères (type de contenu et technologies), un pourcentage de conformité ne saurait donner à lui seul le niveau réel d'accessibilité du site. C'est uniquement conjugué à une analyse descriptive des non-conformités que cet indice peut s'interpréter au mieux.</p>
+				<p>La grille d'audit fournie dans les modèles de documents du RGAA propose un onglet récapitulatif qui donne différents calculs de conformité.</p>
+			</article>
+
+			<article class="article">
+				<h3>Cas particuliers</h3>
+				<p>Un certain nombre de critères possède des cas particuliers. Ils sont à chaque fois référencés dans l’intitulé du critère par un lien «&nbsp;hors cas particuliers&nbsp;». Prenez toujours connaissance des cas particuliers car ils vont vous permettre de déterminer la conformité précisément et vous éviter de rendre des critères conformes ou non conformes à tort. En effet, un critère évalué non conforme à cause d’un contenu jugé en défaut sur la page pourra être en fait non applicable s'il s'agit d'un des cas particuliers du critère.</p>
+				<p>Prenons le test 3.3.1 sur le niveau de contraste&nbsp;:</p>
+				<p><i>«&nbsp;Test 3.3.1&nbsp;: Dans chaque page web, jusqu’à 150% de la taille de police par défaut (ou 1.5em), le texte et le texte en image sans effet de graisse vérifient-ils une de ces conditions (hors cas particuliers)&nbsp;?&nbsp;»</i></p>
+				<p>Le cas particulier pour les tests du critère 3.3 indique&nbsp;: <q>il existe une gestion de cas particulier lorsque le texte fait partie d’un logo ou d’un élément associé à l’identité graphique d’un organisme ou d’une société.</q></p>
+				<p>Ainsi, vous devez évaluer les rapports de contrastes pour tous les éléments textes, sauf pour les éléments qui font partie du logo ou de l’identité graphique de l’organisme pour lesquels le critère est non applicable.</p>
+			</article>
+
+			<article class="article">
+				<h2>Dérogations et droit à la compensation</h2>
+				<p>En plus des 4 statuts cités précédemment, un état particulier et traité à part concernant les contenus dérogés a été créé. Cela se traduit par une colonne supplémentaire dans la grille d’audit qui permet d’indiquer la présence d’un contenu dérogé et les critères qu'il impacte. Un même critère peut donc avoir un état dérogé, mais il reste applicable pour le reste des contenus de la page.</p>
+				<p>Si, lors de l’audit, vous rencontrez une non-conformité qui devrait faire l’objet d’une dérogation, vous devez utiliser le statut «&nbsp;dérogé&nbsp;» et donner, dans la partie commentaire, les raisons de la dérogation.</p>
+				<p>Cet état particulier viendra en complément des quatre premiers statuts et servira à signaler que des contenus dérogés sont applicables au critère et à conserver la trace de ces dérogations.</p>
+				<p>À noter qu’une dérogation ne s’applique qu’à un contenu et non à un critère du RGAA. Une fois le contenu dérogé, il sort du champ de l’audit.</p>
+				<h3>Droit à la compensation</h3>
+				<p class="important"><strong>Important&nbsp;:</strong> Lorsqu’il s’agit d’un contenu ou d’une fonctionnalité essentielle dans le cadre du site ou de l’application web, <strong>il ne peut y avoir de dérogation sans une alternative sophistiquée permettant d’apporter le même niveau d’information à l’utilisateur</strong>.</p>
+				<p>Il est important de rappeler qu’en vertu de l’article 11 de la loi de février 2005&nbsp;:</p>
+				<blockquote><p>La personne handicapée a droit à la compensation des conséquences de son handicap, quels que soient l’origine et la nature de sa déficience, son âge ou son mode de vie.<sup><a href="#ftn3" id="body-ftn3">[3]</a></sup></p></blockquote>
+				<p>De ce fait, chaque organisme a l’obligation de prendre les moyens nécessaires afin de donner accès, dans un délai raisonnable, aux informations et fonctionnalités recherchées par la personne handicapée, que le contenu fasse l’objet d’une dérogation ou non. La possibilité de demander un contenu alternatif accessible doit être offerte à l’utilisateur sur la page d’aide via un moyen de contact accessible (adresse électronique ou formulaire de contact).</p>
+				<h3>Liste des dérogations admises par le RGAA</h3>
+				<p>Si des dérogations existent, vous devez les valider conformément aux dispositions prévues dans le document d’accompagnement du RGAA<a href="#ftn4" id="body-ftn4"><sup>[4]</sup></a>, dont nous reprenons les éléments essentiels ci-après.</p>
+				<h4>Contenus fournis par un tiers</h4>
+				<p>Les contenus fournis par un tiers peuvent faire l’objet d’une dérogation. Une déclaration précise doit permettre de les identifier. La déclaration peut prendre la forme suivante&nbsp;: «&nbsp;<i>Cette page n’est pas conforme, mais pourrait être conforme au RGAA niveau X, si les parties suivantes, issues de sources non contrôlées, lui étaient retirées&nbsp;: [énumérer les parties concernées].&nbsp;</i>»</p>
+				<h5>Contenus générés par l’utilisateur</h5>
+				<p>Il peut arriver qu’il soit impossible lors de l’affichage original de savoir quel sera le contenu non contrôlé de ces pages. C’est le cas notamment des contenus générés par l’utilisateur, comme par exemple dans une application web de courrier électronique, un blog, un article permettant l’ajout de commentaires par les utilisateurs ou toute application acceptant du contenu généré par l’utilisateur comme un wiki.</p>
+				<h5>Contenus non contrôlés provenant de sources extérieures</h5>
+				<p>Un portail ou un site d’informations composé d’une somme de contenus rédigés par de multiples contributeurs externes à l'administration ou des sites insérant automatiquement, au fur et à mesure, du contenu provenant d’autres sites, tels que des publicités insérées automatiquement constituent des cas de dérogations. Ce cas de dérogation vaut également pour les liens vers des documents téléchargeables publiés sur d’autres sites, dont le contenu n’est donc pas contrôlable. La mise en place de liens externes vers des documents à télécharger peut se justifier par la nécessité de fournir des informations complémentaires relatives au contenu. Dans ce cas, la responsabilité revient au producteur du contenu publié sur le site externe.</p>
+				<h4>Langue</h4>
+				<p>Une dérogation est également prévue dans les WCAG&nbsp;2.0 lorsqu’une page n’est pas conforme et pourrait l’être si la compatibilité avec l’accessibilité était assurée pour toutes les langues utilisées dans la page. La déclaration s’énonce alors comme suit&nbsp;: «&nbsp;<i>Cette page n’est pas conforme, mais serait conforme au RGAA au niveau X, si la compatibilité avec l’accessibilité était assurée pour la (les) langue(s) suivante(s)&nbsp;: [énumérer les langues concernées].</i>&nbsp;»</p>
+				<h4>Archivage et obsolescence des contenus</h4>
+				<p>Les contenus relevant de la mission de sauvegarde à titre patrimonial de l’Internet par les acteurs publics désignés par la loi peuvent faire l’objet d’une dérogation.</p>
+				<p>Exemple&nbsp;: un service proposant des archives de contenu. Voir notamment, concernant les archives, les articles 221-1 et suivants du Code du patrimoine, et concernant le dépôt légal, l’article L132-2-1 du Code du patrimoine, ajouté par l’article IV de la loi nº&nbsp;2006&nbsp;—&nbsp;961 du 1<sup>er</sup> août 2006 sur le Droit d’auteur et les droits voisins dans la société de l’information, qui charge La Bibliothèque nationale de France (BNF) et l’Institut national de l’audiovisuel (INA) d’effectuer le dépôt légal des œuvres sous forme numérique.</p>
+				<h4>Contenus en téléchargement en nombre important</h4>
+				<p>Il peut être excessivement coûteux et donc déraisonnable de mettre en conformité un nombre important d’archives en téléchargement. Dans ce cas, une dérogation peut être faite pour les documents de plus de 2 ans. Cela ne vaut pas pour la production de nouveaux documents.</p>
+			</article>
+
+			<article class="footnote">
+				<ol>
+					<li id="ftn1"><a href="http://www.w3.org/TR/EARL10-Schema/"><span lang="en">Evaluation and Report Language (EARL) 1.0 Schema</span> (en anglais)</a> (<a href="#body-ftn1">retour au texte</a>)</li>
+					<li id="ftn2">Source&nbsp;: traduction française agréée des WCAG&nbsp;2.0, chapitre «&nbsp;<a href="https://www.w3.org/Translations/NOTE-UNDERSTANDING-WCAG20-fr/conformance.html">Comprendre la conformité</a>&nbsp;» (<a href="#body-ftn2">retour au texte</a>)</li>
+					<li id="ftn3"><a href="https://www.legifrance.gouv.fr/affichCodeArticle.do;jsessionid=97062D03DAC104BF3296069F42713AAA.tpdila17v_3?cidTexte=LEGITEXT000006074069&idArticle=LEGIARTI000006796450&dateTexte=20170606&categorieLien=id#LEGIARTI000006796450">Article 11 de la loi du 11 février 2005</a> (<a href="#body-ftn3">retour au texte</a>)</li>
+					<li id="ftn4"><a href="http://references.modernisation.gouv.fr/referentiel/guide-accompagnement-RGAA.html#Liste-des-derogations-admises-et-principe-de-la-compensation">Liste des dérogations admises par le RGAA&nbsp;3</a> (<a href="#body-ftn4">retour au texte</a>)</li>
+				</ol>
+			</article>
+
+			</main>
+
+<footer id="footer" role="contentinfo" class="clear">
+		<h2>Licence d'utilisation</h2>
+		<p class="logo-smgap"><a href="http://references.modernisation.gouv.fr/"><img src="img/modernisation-logo.jpg" alt="Secrétariat général pour le modernisation de l'action publique"></a></p>
+		<p>Ce document est la propri&#233;t&#233; du Secr&#233;tariat g&#233;n&#233;ral &#224; la modernisation de l'action publique fran&#231;ais (SGMAP). Il est plac&#233; sous la <a href="https://www.etalab.gouv.fr/licence-ouverte-open-licence">licence ouverte 1.0 ou ult&#233;rieure</a>, &#233;quivalente &#224; une licence <i lang="en">Creative Commons BY</i>. Pour indiquer la paternit&#233;, ajouter un lien vers la version originale du document disponible sur le <a href="https://github.com/DISIC">compte <span lang="en">GitHub</span> de la DInSIC</a>.</p>
+
+	</footer>
+
+							</div>
+
+							<script src="js/script.js"></script>
+
+						</body>
+						</html>
