@@ -25,7 +25,7 @@ Le document est organisé en 3 grandes parties :
 
 ## Consultation
 
-Vous pouvez [consulter ce guide en ligne](http://disic.github.io/guide-auditeur) ou le télécharger au format [ODT - 49 ko](export/guide-auditeur.odt) ou [PDF - 396 ko](export/guide-auditeur.pdf)
+Vous pouvez [consulter ce guide en ligne](http://disic.github.io/guide-auditeur) ou le télécharger au format [ODT - 48 ko](https://github.com/DISIC/guide-auditeur/raw/master/export/guide-auditeur.odt) ou [PDF - 395 ko](https://github.com/DISIC/guide-auditeur/raw/master/export/guide-auditeur.pdf)
 
 ## Licence d’utilisation
 
